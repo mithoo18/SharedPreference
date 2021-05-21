@@ -18,13 +18,31 @@ public class MainActivity extends AppCompatActivity {
         age =  findViewById(R.id.edit2);
     }
 
+    // Fetch the stored data in onResume()
+    // Because this is what will be called
     @Override
     protected void onResume()
     {
         super.onResume();
+        SharedPreferences sh = getSharedPreferences("MySharedPref",MODE_PRIVATE);
 
+        String s1 = sh.getString("name","");
+        int a = sh.getInt("age",0);
+        name.setText(s1);
+        age.setText(String.valueOf(a));
+    }
 
+    // Store the data in the SharedPreference
+    // in the onPause() method
+    @Override
+    protected void onPause() {
+        super.onPause();
 
+        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref",MODE_PRIVATE);
+        SharedPreferences.Editor myEdit = sharedPreferences.edit();
 
+        myEdit.putString("name",name.getText().toString());
+        myEdit.putInt("age",Integer.parseInt(age.getText().toString()));
+        myEdit.apply();
     }
 }
