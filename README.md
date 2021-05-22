@@ -25,7 +25,7 @@ $ git remote remove origin
 
 <table>
 <tr>
-  <td><img align="left" src="https://github.com/mithoo18/SharedPreference/blob/master/gitimg/1.png" alt="Page 1" /></td>
+  <td><img align="left" src="https://github.com/mithoo18/RXJAVA-Basic/blob/master/gitimg/1.png" alt="Page 1" /></td>
   </tr>
 </table>
 
